@@ -1,7 +1,6 @@
 # 💫 About Me:
 I'm a versatile software developer (cap)  with expertise in multiple programming languages and frameworks. Currently focused on building FlexRizz while expanding my skills in QML/QT, C++, and Kotlin. Known for my analytical problem-solving abilities.
 
-## 🌐 Socials:https://marketplace.visualstudio.com/items?itemName=sanecodeguy.qt-log-remover&ssr=false#overview
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://linkedin.com/in/ali-rizvi-7b57b628a)
 [![Instagram](https://img.shields.io/badge/Instagram-%23E4405F.svg?logo=Instagram&logoColor=white)](https://instagram.com/doubleroote)
 
