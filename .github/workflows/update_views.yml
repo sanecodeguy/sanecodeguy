@@ -1,51 +1,43 @@
 name: Update Profile Views
 on:
   schedule:
-    - cron: '0 * * * *'  # Runs hourly
+    - cron: '*/5 * * * *'  # Every 5 minutes (GitHub's minimum)
   workflow_dispatch:
+
 jobs:
   update-views:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # Critical for git history
+
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
           python-version: '3.10'
+
       - name: Update view count
         env:
           MONGODB_URI: ${{ secrets.MONGODB_URI }}
         run: |
           pip install pymongo
           python update_views.py
-        run: |
 
-          pip install pymongo
-
-          python update_views.py
-
-
-      
-
-      - name: Commit changes
-
-
+      - name: Commit and Force Push
         env:
-
-
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
-
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-
+          # Configure git
           git config --global user.name "GitHub Actions"
-
           git config --global user.email "actions@github.com"
-
-
-          git remote set-url origin "https://x-access-token:$GITHUB_TOKEN@github.com/sanecodeguy/sanecodeguy.git"
-
+          
+          # Set authenticated remote URL
+          git remote set-url origin "https://x-access-token:$GITHUB_TOKEN@github.com/${{ github.repository }}.git"
+          
+          # Sync and force update
+          git fetch origin
+          git reset --hard origin/main
           git add views.txt
-
-          git commit -m "Update view count"
-
-          git push
+          git commit -m "Update views [skip ci]"
+          git push --force
