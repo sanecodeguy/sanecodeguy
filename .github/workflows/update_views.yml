@@ -1,7 +1,7 @@
 name: Update Profile Views
 on:
   schedule:
-    - cron: '*/5 * * * *'  # Every 5 minutes (GitHub's minimum)
+    - cron: '*/5 * * * *'  # Every 5 minutes
   workflow_dispatch:
 
 jobs:
@@ -10,7 +10,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          fetch-depth: 0  # Critical for git history
+          fetch-depth: 0  # Get complete history
 
       - name: Set up Python
         uses: actions/setup-python@v4
@@ -24,7 +24,7 @@ jobs:
           pip install pymongo
           python update_views.py
 
-      - name: Commit and Force Push
+      - name: Commit and Push Changes
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
@@ -32,12 +32,13 @@ jobs:
           git config --global user.name "GitHub Actions"
           git config --global user.email "actions@github.com"
           
-          # Set authenticated remote URL
-          git remote set-url origin "https://x-access-token:$GITHUB_TOKEN@github.com/${{ github.repository }}.git"
-          
-          # Sync and force update
+          # Reset to remote to avoid conflicts
           git fetch origin
-          git reset --hard origin/main
+          git reset --soft origin/main
+          
+          # Add and commit changes
           git add views.txt
-          git commit -m "Update views [skip ci]"
-          git push --force
+          git commit -m "Update view count [skip ci]"
+          
+          # Push changes
+          git push origin main
