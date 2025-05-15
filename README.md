@@ -4,6 +4,7 @@ I'm a versatile software developer (cap)  with expertise in multiple programming
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://linkedin.com/in/ali-rizvi-7b57b628a)
 [![Instagram](https://img.shields.io/badge/Instagram-%23E4405F.svg?logo=Instagram&logoColor=white)](https://instagram.com/doubleroote)
 
+![Profile Views](https://img.shields.io/badge/Views-$(cat views.txt || echo 0)-blue)
 # 💻 Technical Skills:
 
 ## Programming Languages:
