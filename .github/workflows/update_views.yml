@@ -14,7 +14,7 @@ jobs:
           python-version: '3.10'
       - name: Update view count
         env:
-          MONGODB_URI: ${{ mongodb+srv://sanecodeguy:<db_password>@gthubprofileviews.ngfsohv.mongodb.net/?retryWrites=true&w=majority&appName=GthubProfileViews }}  
+          MONGODB_URI: ${{ mongodb+srv://sanecodeguy:u8CSbtiJ8Lt0datH@gthubprofileviews.ngfsohv.mongodb.net/?retryWrites=true&w=majority&appName=GthubProfileViews }}  
         run: |
           pip install pymongo
           python update_views.py
