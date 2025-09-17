@@ -1,7 +1,7 @@
 # About Me:
 i code 
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://linkedin.com/in/ali-rizvi-7b57b628a)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://linkedin.com/in/doubleroote)
 [![Instagram](https://img.shields.io/badge/Instagram-%23E4405F.svg?logo=Instagram&logoColor=white)](https://instagram.com/doubleroote)
 
 ![Profile Views](https://komarev.com/ghpvc/?username=sanecodeguy&color=blue&label=PROFILE+VIEWS)
